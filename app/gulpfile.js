@@ -21,7 +21,7 @@ var swallowError = function(error) {
 }
 gulp.task('browser-sync', function() {
   browserSync({
-    proxy: 'localhost:8080',
+    proxy: 'localhost:8080/Los_cachaceiros',
     browser: "chrome",
     open: true,
     port: "3000",
@@ -32,9 +32,13 @@ gulp.task('bs-reload', function () {
   browserSync.reload();
 });
 gulp.task('jsp', function(){
-  browserSync.reload();
   return gulp.src(paths.src+'jsp/*.jsp')
     .pipe(gulp.dest(paths.dest))
+    .pipe(browserSync.reload({stream:true}))
+});
+gulp.task('fonts', function(){
+  return gulp.src(paths.src+'fonts/*.*')
+    .pipe(gulp.dest(paths.dest+'fonts/'))
     .pipe(browserSync.reload({stream:true}))
 });
 gulp.task('css', function(){
@@ -60,8 +64,8 @@ gulp.task('img', function(){
     .pipe(cache(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true })))
     .pipe(gulp.dest(paths.dest+'img'));
 });
-gulp.task('default', [ 'jsp', 'css', 'js', 'img', 'browser-sync'], function(){
-  gulp.watch(paths.src+"scss/*.scss", ['css']);
-  gulp.watch(paths.src+"js/*.js", ['js']);
-  gulp.watch(paths.src+"jsp/*.jsp", ['jsp']);
+gulp.task('default', [ 'jsp', 'css', 'js', 'img', 'fonts', 'browser-sync'], function(){
+    gulp.watch(paths.src+"scss/*.scss", ['css']).on('change', browserSync.reload);
+    gulp.watch(paths.src+"js/*.js", ['js']).on('change', browserSync.reload);
+    gulp.watch(paths.src+"jsp/*.jsp", ['jsp']).on('change', browserSync.reload);
 });

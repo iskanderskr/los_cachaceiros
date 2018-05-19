@@ -7,6 +7,15 @@
 	<link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-	<div class="modal-loading"></div>
+	<div class="modal-loading">
+		<div class="logo">
+			<span>Los<br /> Cachaceiros</span>
+			<figure>
+				<img src="img/moon.svg">
+				<img src="img/bottle.svg">
+			</figure>
+		</div>
+	</div>
+	<script src="js/scripts.js"></script>
 </body>
 </html>
