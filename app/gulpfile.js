@@ -21,7 +21,7 @@ var swallowError = function(error) {
 }
 gulp.task('browser-sync', function() {
   browserSync({
-    proxy: 'localhost:8080/Los_cachaceiros',
+    proxy: 'localhost:8080',
     browser: "chrome",
     open: true,
     port: "3000",
@@ -32,6 +32,7 @@ gulp.task('bs-reload', function () {
   browserSync.reload();
 });
 gulp.task('jsp', function(){
+  browserSync.reload();
   return gulp.src(paths.src+'jsp/*.jsp')
     .pipe(gulp.dest(paths.dest))
     .pipe(browserSync.reload({stream:true}))
@@ -62,5 +63,5 @@ gulp.task('img', function(){
 gulp.task('default', [ 'jsp', 'css', 'js', 'img', 'browser-sync'], function(){
   gulp.watch(paths.src+"scss/*.scss", ['css']);
   gulp.watch(paths.src+"js/*.js", ['js']);
-  gulp.watch(paths.src+"jsp/*.jsp", ['html']);
+  gulp.watch(paths.src+"jsp/*.jsp", ['jsp']);
 });
