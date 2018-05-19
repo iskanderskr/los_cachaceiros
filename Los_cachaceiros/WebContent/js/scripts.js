@@ -1,0 +1,4 @@
+document.addEventListener('ready',function(){
+	teste
+});
+//# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm1haW4uanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7QUFDQTtBQUNBIiwiZmlsZSI6InNjcmlwdHMuanMiLCJzb3VyY2VzQ29udGVudCI6WyJkb2N1bWVudC5hZGRFdmVudExpc3RlbmVyKCdyZWFkeScsZnVuY3Rpb24oKXtcclxuXHR0ZXN0ZVxyXG59KTsiXX0=

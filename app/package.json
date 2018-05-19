@@ -1,0 +1,47 @@
+{
+  "name": "los-cachaceiros",
+  "version": "1.0.0",
+  "description": "Aplicativo web para administração de uma adega",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iskanderskr/los_cachaceiros.git"
+  },
+  "keywords": [
+    "adega",
+    "cachaça",
+    "vinho",
+    "alambique"
+  ],
+  "author": "Iskander Bittencourt, Gabriel Ornelas, Renan Paganini e Victor França",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iskanderskr/los_cachaceiros/issues"
+  },
+  "homepage": "https://github.com/iskanderskr/los_cachaceiros#readme",
+  "devDependencies": {
+    "gulp": "*",
+    "gulp-autoprefixer": "*",
+    "gulp-changed": "*",
+    "gulp-concat": "*",
+    "gulp-cssnano": "*",
+    "gulp-git": "*",
+    "gulp-htmlmin": "*",
+    "gulp-sass": "*",
+    "gulp-babel": "*",
+    "gulp-cache": "*",
+    "gulp-clean": "*",
+    "gulp-imagemin": "*",
+    "gulp-sourcemaps": "*",
+    "gulp-clean-css": "*",
+    "gulp-uglify": "*",
+    "browser-sync": "*",
+    "normalize.css": "*"
+  },
+  "dependencies": {
+    "font-awesome": "*"
+  }
+}
