@@ -59,12 +59,21 @@ gulp.task('js', function(){
     .pipe(gulp.dest(paths.dest+'js'))
     .pipe(browserSync.reload({stream:true}))
 });
+gulp.task('libs-css', function(){
+  return gulp.src('./node_modules/font-awesome/scss/*.scss')
+    .pipe(sass())
+    .on('error', swallowError)
+    .pipe(autoprefixer())
+    .pipe(cleanCSS())
+    .pipe(concat('libs.css'))
+    .pipe(gulp.dest(paths.dest+'css/'))
+});
 gulp.task('img', function(){
   gulp.src(paths.src+'img/*.*')
     .pipe(cache(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true })))
     .pipe(gulp.dest(paths.dest+'img'));
 });
-gulp.task('default', [ 'jsp', 'css', 'js', 'img', 'fonts', 'browser-sync'], function(){
+gulp.task('default', [ 'jsp', 'css', 'libs-css', 'js', 'img', 'fonts', 'browser-sync'], function(){
     gulp.watch(paths.src+"scss/*.scss", ['css']).on('change', browserSync.reload);
     gulp.watch(paths.src+"js/*.js", ['js']).on('change', browserSync.reload);
     gulp.watch(paths.src+"jsp/*.jsp", ['jsp']).on('change', browserSync.reload);

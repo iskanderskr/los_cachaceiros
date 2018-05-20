@@ -12,15 +12,10 @@ import app.model.DAO;
 @WebServlet("/excluir")
 public class exclusao extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//Obtendo id para excluir
 		String id = request.getParameter("id");
-		
-		//DAO para exclusao
 		new DAO().deletar(id);
-		
-		//Redirecionando
 		response.sendRedirect("index.jsp");
 	}
 

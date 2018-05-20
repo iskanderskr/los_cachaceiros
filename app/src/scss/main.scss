@@ -6,3 +6,63 @@
     font-family: font-logo;
     src: url('../fonts/font-logo.ttf');
 }
+@keyframes bebendo{
+	from{
+		transform: rotate(-75deg);
+	}to{
+		transform: rotate(-120deg);
+	}
+}
+@keyframes aparecendo{
+	from{
+		opacity: 0;
+		visibility: hidden;
+	}to{
+		opacity: 1;
+		visibility: visible;
+	}
+}
+@keyframes aparecendoLeft{
+	from{
+		opacity: 0;
+		visibility: hidden;
+		transform: translateX(-100px);
+	}to{
+		opacity: 1;
+		visibility: visible;
+		transform: translateX(0);
+	}
+}
+@keyframes aparecendoRight{
+	from{
+		opacity: 0;
+		visibility: hidden;
+		transform: translateX(100px);
+	}to{
+		opacity: 1;
+		visibility: visible;
+		transform: translateX(0);
+	}
+}
+@keyframes aparecendoTop{
+	from{
+		opacity: 0;
+		visibility: hidden;
+		transform: translateY(100px);
+	}to{
+		opacity: 1;
+		visibility: visible;
+		transform: translateY(0);
+	}
+}
+@keyframes aparecendoLeft{
+	from{
+		opacity: 0;
+		visibility: hidden;
+		transform: translateY(-100px);
+	}to{
+		opacity: 1;
+		visibility: visible;
+		transform: translateY(0);
+	}
+}
