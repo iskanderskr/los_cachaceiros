@@ -14,31 +14,30 @@ import javax.servlet.http.HttpServletResponse;
 import app.model.Bebida;
 import app.model.DAO;
 
-
 @WebServlet("/showImg")
-public class showImg extends HttpServlet {
+public class ShowImg extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		String id = request.getParameter("id");
-		
+
 		Bebida bebida = new DAO().resgatar(id);
 
 		String strPath = request.getServletContext().getRealPath("dist/img");
-		
+
 		String nomeArq = "foto1.jpg";
-		
-		if(bebida != null && bebida.getImg() != null) {
+
+		if (bebida != null && bebida.getImg() != null) {
 			nomeArq = bebida.getImg();
 		}
-		
+
 		Path pathImagem = Paths.get(strPath, nomeArq);
-		
+
 		byte[] imagemByte = Files.readAllBytes(pathImagem);
-		
+
 		response.setContentType("image/png");
 		response.setContentLength(imagemByte.length);
 		response.getOutputStream().write(imagemByte);
-		
 	}
 }

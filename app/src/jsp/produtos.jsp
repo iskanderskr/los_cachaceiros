@@ -2,17 +2,18 @@
 	<hgroup>
 		<h1>Confira nossos produtos</h1>
 	</hgroup>
-	<ul>
-		<li>item 1</li>
-		<li>item 2</li>
-		<li>item 3</li>
-		<li>item 4</li>
-		<li>item 5</li>
-		<li>item 6</li>
-		<li>item 7</li>
-		<li>item 8</li>
-		<li>item 9</li>
-		<li>item 10</li>
-	</ul>
+	<section>
+		<c:forEach items="${bebidas}" var="bebida">
+			<a href="#">
+				<picture>
+					<img src="img/img1.jpg">
+				</picture>
+				<div class="descricao">
+					<div class="nome">${bebida.nome}</div>
+					<div class="preco">${bebida.preco}</div>
+				</div>
+			</a>
+		</c:forEach>
+	</section>
 	
 </div>

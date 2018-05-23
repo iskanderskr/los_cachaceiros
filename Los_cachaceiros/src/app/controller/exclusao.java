@@ -9,14 +9,12 @@ import javax.servlet.http.HttpServletResponse;
 
 import app.model.DAO;
 
-@WebServlet("/excluir")
-public class exclusao extends HttpServlet {
+@WebServlet("/exclusao")
+public class Exclusao extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String id = request.getParameter("id");
 		new DAO().deletar(id);
 		response.sendRedirect("index.jsp");
 	}
-
 }

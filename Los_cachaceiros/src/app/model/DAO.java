@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import app.util.ConnectionFactory;
 
 public class DAO {
+
 	public void adicionar(Bebida bebida) {
 		try {
 			Connection con = ConnectionFactory.getConnection();

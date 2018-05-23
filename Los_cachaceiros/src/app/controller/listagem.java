@@ -12,15 +12,12 @@ import javax.servlet.http.HttpServletResponse;
 import app.model.Bebida;
 import app.model.DAO;
 
-
 @WebServlet("/listagem")
-public class listagem extends HttpServlet {
+public class Listagem extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		ArrayList<Bebida> bebidas = new DAO().listar();
 		request.setAttribute("bebidas", bebidas);
-		request.getRequestDispatcher("listagem.jsp").forward(request, response);
+		request.getRequestDispatcher("index.jsp").forward(request, response);
 	}
-
 }

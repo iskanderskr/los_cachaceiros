@@ -1,7 +1,6 @@
 package app.controller;
 
 import java.io.IOException;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -12,14 +11,12 @@ import javax.servlet.http.Part;
 import app.model.Bebida;
 import app.model.DAO;
 
-@WebServlet("/editar")
-public class edicao extends HttpServlet {
+@WebServlet("/edicao")
+public class Edicao extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	String id;
-
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
 		String id = request.getParameter("id");
 
 		Bebida bebida = new DAO().resgatar(id);
@@ -28,11 +25,8 @@ public class edicao extends HttpServlet {
 
 		request.getRequestDispatcher("edicao.jsp").forward(request, response);
 	}
-
-	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
 		String nome = request.getParameter("txtNome");
 		int ano = Integer.parseInt(request.getParameter("txtAno"));
 		String tipo = request.getParameter("txtTipo");
@@ -63,4 +57,5 @@ public class edicao extends HttpServlet {
 
 		response.sendRedirect("editar?id=" + id);
 	}
+
 }
